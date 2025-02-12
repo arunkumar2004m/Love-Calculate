@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('image/Romantic_Couple_In_Love_On_Valentines_Day_Background_Wallpaper_Image.jpeg') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+ /* Fixed white background */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        input {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ff5252;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 12px 20px;
+            background-color: #ff5252;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            width: 85%;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #d50000;
+        }
+
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        #shareButton {
+            display: none;
+            margin: 10px auto;
+            width: 85%;
+        }
+
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                height: 100vh;
+                background: url('image/Romantic\ Couple\ In\ Love\ On\ Valentines\ Day\ Background\ Wallpaper\ Image.jpeg') no-repeat center;
+                background-size: cover;
+            }
+
+            .container {
+                width: 90%;
+                max-width: 350px;
+                padding: 15px;
+            }
+        }
+
+        @media (min-width: 980px) {
+            body {
+                background: url('image/Wallpaper\ children\,\ love\,\ moon\,\ romance\ hd\,.jpeg') no-repeat center center;
+                background-size: cover;
+            }
+
+            .container {
+                width: 400px;
+                padding: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>❤️ Love Calculator ❤️</h2>
+        <input type="text" id="yourname" placeholder="ENTER YOUR NAME">
+        <input type="text" id="yourpartner" placeholder="ENTER YOUR PARTNER'S NAME">
+        <button onclick="calculateLoveScore()">Calculate</button>
+        <p id="result"></p>
+        <button id="shareButton" onclick="shareResult()">Share</button>
+    </div>
+
+    <script>
+        function calculateLoveScore() {
+            let name1 = document.getElementById("yourname").value.trim();
+            let name2 = document.getElementById("yourpartner").value.trim();
+            let result = document.getElementById("result");
+            let shareButton = document.getElementById("shareButton");
+
+            let namePattern = /^[A-Za-z\s]+$/;
+
+            if (name1 === "" || name2 === "") {
+                result.innerHTML = "❌ Please enter both names!";
+                result.style.color = "red";
+                result.style.opacity = "1";
+                shareButton.style.display = "none";
+                return;
+            }
+
+            if (!namePattern.test(name1) || !namePattern.test(name2)) {
+                result.innerHTML = "❌ Names must only contain letters!";
+                result.style.color = "red";
+                result.style.opacity = "1";
+                shareButton.style.display = "none";
+                return;
+            }
+
+            let score = generateLoveScore(name1, name2);
+            displayLoveScore(score, result, shareButton);
+        }
+
+        function generateLoveScore(name1, name2) {
+            let combinedNames = (name1 + name2).toLowerCase();
+            let score = 0;
+
+            for (let i = 0; i < combinedNames.length; i++) {
+                score += combinedNames.charCodeAt(i);
+            }
+
+            return (score % 100) + 1;
+        }
+
+        function displayLoveScore(score, result, shareButton) {
+            let message = "";
+            if (score >= 80) {
+                message = `❤️ Your Love Score is: ${score}% <br> You're a perfect match!`;
+                result.style.color = "green";
+            } else if (score >= 50) {
+                message = `💛 Your Love Score is: ${score}% <br> You have good potential together!`;
+                result.style.color = "orange";
+            } else {
+                message = `💔 Your Love Score is: ${score}% <br> Not the best couple, but friendship is great!`;
+                result.style.color = "red";
+            }
+
+            result.innerHTML = message;
+            result.style.opacity = "1";
+            result.classList.add("fade-in");
+
+            shareButton.style.display = "block";
+        }
+
+        function shareResult() {
+            let resultText = document.getElementById("result").innerText;
+            let shareData = {
+                title: "Love Calculator ❤️",
+                text: resultText,
+                url: window.location.href
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData).catch(err => console.log("Error sharing:", err));
+            } else {
+                alert("Sharing not supported in this browser.");
+            }
+        }
+    </script>
+
+</body>
+</html>
