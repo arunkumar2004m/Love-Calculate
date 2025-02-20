@@ -1,6 +1,4 @@
-document.addEventListener("touchmove", function(event) {
-    event.preventDefault(); // This prevents pull-to-refresh, remove it to enable
-}, { passive: false });
+
 
 
         function calculateLoveScore() {
