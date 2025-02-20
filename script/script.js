@@ -1,7 +1,17 @@
+let touchStartY = 0;
 
+document.addEventListener("touchstart", function (event) {
+    touchStartY = event.touches[0].clientY;
+});
 
+document.addEventListener("touchend", function (event) {
+    let touchEndY = event.changedTouches[0].clientY;
+    if (touchEndY - touchStartY > 100) { // Swipe down detected
+        location.reload(); // Refresh the page
+    }
+});
 
-        function calculateLoveScore() {
+function calculateLoveScore() {
             let name1 = document.getElementById("yourname").value.trim();
             let name2 = document.getElementById("yourpartner").value.trim();
             let result = document.getElementById("result");
@@ -76,4 +86,3 @@
                 alert("Sharing not supported in this browser.");
             }
         }
-        
