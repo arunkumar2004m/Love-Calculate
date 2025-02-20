@@ -3,7 +3,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('image/Romantic_Couple_In_Love_On_Valentines_Day_Background_Wallpaper_Image.jpeg') no-repeat center center;
+    background: url('/Love-Calculator/image/Romantic\ Couple\ In\ Love\ On\ Valentines\ Day\ Background\ Wallpaper\ Image.jpeg') no-repeat center center;
     background-size: cover;
     height: 100vh;
     margin: 0;
@@ -82,7 +82,7 @@ button:hover {
 @media (max-width: 768px) {
     body {
         height: 100vh;
-        background: url('image/Romantic\ Couple\ In\ Love\ On\ Valentines\ Day\ Background\ Wallpaper\ Image.jpeg') no-repeat center;
+        background: url('/Love-Calculator/image/Romantic\ Couple\ In\ Love\ On\ Valentines\ Day\ Background\ Wallpaper\ Image.jpeg') no-repeat center;
         background-size: cover;
     }
 
@@ -95,7 +95,7 @@ button:hover {
 
 @media (min-width: 980px) {
     body {
-        background: url('image/Wallpaper\ children\,\ love\,\ moon\,\ romance\ hd\,.jpeg') no-repeat center center;
+        background: url('/Love-Calculator/image/Wallpaper\ children\,\ love\,\ moon\,\ romance\ hd\,.jpeg children\,\ love\,\ moon\,\ romance\ hd\,.jpeg') no-repeat center center;
         background-size: cover;
     }
 
