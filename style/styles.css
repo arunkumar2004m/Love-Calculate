@@ -1,19 +1,20 @@
-html, body {
-    overscroll-behavior: auto; /* Restore default behavior */
-    touch-action: auto; /* Allow normal touch gestures */
-    overflow: auto; /* Enable scrolling */
-}
-
+html,
 body {
+    overscroll-behavior: auto;
+    /* Restore default behavior */
+    touch-action: auto;
+    /* Allow normal touch gestures */
+    overflow: auto;
+    /* Enable scrolling */
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("/Love-Calculator/image/moon_romance_hd.jpeg") no-repeat center center;
+    height: 100vh;
     background-size: cover;
     height: 100vh;
     margin: 0;
-    overflow: hidden; /* Prevent scrolling */
+
 }
 
 .container {
@@ -77,14 +78,21 @@ button:hover {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* Responsive Design */
-@media (max-width: 500px) {
+@media (max-width: 780px) {
+
     body {
         height: 100vh;
+    
         background: url("/Love-Calculator/image/Romantic_Couple.jpeg") no-repeat center;
         background-size: cover;
     }
@@ -94,13 +102,15 @@ button:hover {
         max-width: 300px;
         padding: 15px;
     }
-    input, button {
+
+    input,
+    button {
         font-size: 14px;
         padding: 10px;
     }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 480px) {
     body {
         background: url("/Love-Calculator/image/moon_romance_hd.jpeg") no-repeat center center;
         background-size: cover;
