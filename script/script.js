@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", function () {
+    let resultElement = document.getElementById("result");
+
+    function showResult(lovePercentage) {
+        resultElement.textContent = "Love Percentage: " + lovePercentage + "%";
+        resultElement.style.visibility = "visible";
+        resultElement.style.opacity = "1";
+    }
 
     // Fix scrolling & allow refresh
     document.addEventListener("touchmove", function (event) {
@@ -5,6 +13,7 @@
             event.stopPropagation(); // Allow refresh when at the top
         }
     }, { passive: false });
+});
 
 
 function calculateLoveScore() {
