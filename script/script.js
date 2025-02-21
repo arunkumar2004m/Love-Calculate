@@ -1,15 +1,9 @@
-let touchStartY = 0;
-
-document.addEventListener("touchstart", function (event) {
-    touchStartY = event.touches[0].clientY;
-});
-
-document.addEventListener("touchend", function (event) {
-    let touchEndY = event.changedTouches[0].clientY;
-    if (touchEndY - touchStartY > 100) { // Swipe down detected
-        location.reload(); // Refresh the page
+document.addEventListener("touchmove", function (event) {
+    if (window.scrollY === 0) {
+        event.preventDefault();
     }
-});
+}, { passive: false });
+
 
 function calculateLoveScore() {
             let name1 = document.getElementById("yourname").value.trim();
