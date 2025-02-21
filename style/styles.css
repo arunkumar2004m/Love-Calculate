@@ -17,11 +17,6 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     width: 90%;
     max-width: 400px;
-/* Fixed white background */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 input {
