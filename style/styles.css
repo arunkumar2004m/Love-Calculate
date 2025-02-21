@@ -1,6 +1,5 @@
 html, body {
-    overscroll-behavior:auto;
-    
+    overscroll-behavior: contain;
 }
 
 
