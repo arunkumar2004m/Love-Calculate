@@ -1,20 +1,16 @@
-html,
 body {
     overscroll-behavior: auto;
-    /* Restore default behavior */
     touch-action: auto;
-    /* Allow normal touch gestures */
     overflow: auto;
-    /* Enable scrolling */
     font-family: Arial, sans-serif;
     display: flex;
+    background: url("../image/moon_romance_hd.jpeg") no-repeat center center;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    /* Fix mobile height issue */
     background-size: cover;
-    height: 100vh;
     margin: 0;
-
 }
 
 .container {
@@ -24,14 +20,16 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     width: 90%;
     max-width: 400px;
-
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 input {
     display: block;
-    width: 85%;
-    margin: 10px auto;
+    width: 100%;
+    /* Fix alignment issue */
+    margin: 10px 0;
     padding: 12px;
     font-size: 16px;
     border: 2px solid #ff5252;
@@ -41,7 +39,7 @@ input {
 
 button {
     display: block;
-    margin: 10px auto;
+    margin: 10px 0;
     padding: 12px 20px;
     background-color: #ff5252;
     color: white;
@@ -49,13 +47,19 @@ button {
     cursor: pointer;
     font-size: 18px;
     border-radius: 5px;
-    width: 85%;
+    width: 100%;
+    /* Improve alignment */
     transition: 0.3s;
     text-align: center;
 }
 
 button:hover {
     background-color: #d50000;
+}
+
+button:focus {
+    outline: 2px solid white;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 #result {
@@ -69,7 +73,7 @@ button:hover {
 #shareButton {
     display: none;
     margin: 10px auto;
-    width: 85%;
+    width: 100%;
 }
 
 /* Animation */
@@ -88,12 +92,10 @@ button:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 780px) {
-
+@media (min-width: 4800px) {
     body {
-        height: 100vh;
-    
-        background: url("/Love-Calculator/image/Romantic_Couple.jpeg") no-repeat center;
+        min-height: 100vh;
+        background: url("../image/moon_romance_hd.jpeg") no-repeat center;
         background-size: cover;
     }
 
@@ -110,9 +112,9 @@ button:hover {
     }
 }
 
-@media (min-width: 480px) {
+@media (max-width: 480px) {
     body {
-        background: url("/Love-Calculator/image/moon_romance_hd.jpeg") no-repeat center center;
+        background: url("../image/Romantic_Couple.jpeg") no-repeat center center;
         background-size: cover;
     }
 
