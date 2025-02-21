@@ -1,8 +1,19 @@
-document.addEventListener("touchmove", function (event) {
-    if (window.scrollY === 0) {
-        event.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+    let resultElement = document.getElementById("result");
+
+    function showResult(lovePercentage) {
+        resultElement.textContent = "Love Percentage: " + lovePercentage + "%";
+        resultElement.style.visibility = "visible";
+        resultElement.style.opacity = "1";
     }
-}, { passive: false });
+
+    // Fix scrolling & allow refresh
+    document.addEventListener("touchmove", function (event) {
+        if (window.scrollY === 0) {
+            event.stopPropagation(); // Allow refresh when at the top
+        }
+    }, { passive: false });
+});
 
 
 function calculateLoveScore() {

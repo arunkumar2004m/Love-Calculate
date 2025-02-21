@@ -1,7 +1,8 @@
 html, body {
-    overscroll-behavior: contain;
+    overscroll-behavior: auto; /* Restore default behavior */
+    touch-action: auto; /* Allow normal touch gestures */
+    overflow: auto; /* Enable scrolling */
 }
-
 
 body {
     font-family: Arial, sans-serif;
