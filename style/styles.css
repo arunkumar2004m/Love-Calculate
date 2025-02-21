@@ -1,3 +1,8 @@
+html, body {
+    overscroll-behavior: contain;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -55,7 +60,7 @@ button:hover {
     font-size: 20px;
     font-weight: bold;
     margin-top: 20px;
-    visibility: hidden;
+   
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
