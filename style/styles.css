@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("/Love-Calculator/image/moon_romance_hd.jpeg") no-repeat center center;
+    background: url("/Love-Calculator/image/Romantic_Couple.jpeg.jpeg") no-repeat center center;
     background-size: cover;
     height: 100vh;
     margin: 0;
@@ -82,7 +82,7 @@ button:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
     body {
         height: 100vh;
         background: url("/Love-Calculator/image/Romantic_Couple.jpeg") no-repeat center;
@@ -100,7 +100,7 @@ button:hover {
     }
 }
 
-@media (min-width: 480px) {
+@media (min-width: 500px) {
     body {
         background: url("/Love-Calculator/image/moon_romance_hd.jpeg") no-repeat center center;
         background-size: cover;
