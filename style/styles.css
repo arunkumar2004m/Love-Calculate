@@ -1,6 +1,6 @@
 html, body {
-    overscroll-behavior:contain;
-    touch-action:auto;/* Disables touch gestures like pull-to-refresh */
+    overscroll-behavior:auto;
+    
 }
 
 
