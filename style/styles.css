@@ -1,5 +1,6 @@
 html, body {
-    overscroll-behavior: contain;
+    overscroll-behavior: none;
+    touch-action: none; /* Disables touch gestures like pull-to-refresh */
 }
 
 
@@ -60,7 +61,6 @@ button:hover {
     font-size: 20px;
     font-weight: bold;
     margin-top: 20px;
-   
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
@@ -85,7 +85,7 @@ button:hover {
 @media (max-width: 768px) {
     body {
         height: 100vh;
-        background: url('/Love-Calculator/image/Romantic Couple.jpeg') no-repeat center;
+        background: url("/Love-Calculator/image/Romantic Couple.jpeg") no-repeat center;
         background-size: cover;
     }
 
@@ -102,7 +102,7 @@ button:hover {
 
 @media (min-width: 480px) {
     body {
-        background: url('/Love-Calculator/image/moon romance hd.jpeg') no-repeat center center;
+        background: url("/Love-Calculator/image/moon romance hd.jpeg") no-repeat center center;
         background-size: cover;
     }
 

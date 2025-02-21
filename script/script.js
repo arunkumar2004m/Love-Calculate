@@ -1,7 +1,5 @@
 document.addEventListener("touchmove", function (event) {
-    if (window.scrollY === 0) {
-        event.preventDefault();
-    }
+    event.preventDefault(); // Prevents vertical scrolling
 }, { passive: false });
 
 
